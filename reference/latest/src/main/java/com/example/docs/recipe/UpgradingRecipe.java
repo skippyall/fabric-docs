@@ -10,6 +10,8 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
+import org.jspecify.annotations.Nullable;
+
 // :::baseClass
 public class UpgradingRecipe implements Recipe<UpgradingRecipeInput> {
 	private final ItemStack result;
@@ -57,14 +59,14 @@ public class UpgradingRecipe implements Recipe<UpgradingRecipeInput> {
 	public RecipeType<? extends Recipe<UpgradingRecipeInput>> getType() {
 		return ExampleModRecipes.UPGRADING_RECIPE_TYPE;
 	}
-
-	@Override
-	public RecipeBookCategory recipeBookCategory() {
-		return ExampleModRecipes.UPGRADING_RECIPE_BOOK_CATEGORY;
-	}
 	// :::implementRegistryObjects
 
 	// :::recipeBook
+	@Override
+	public @Nullable RecipeBookCategory recipeBookCategory() {
+		return null;
+	}
+
 	@Override
 	public PlacementInfo placementInfo() {
 		return PlacementInfo.NOT_PLACEABLE;

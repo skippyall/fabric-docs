@@ -32,12 +32,15 @@ public class ExampleModRecipes implements ModInitializer {
 					new RecipeType<UpgradingRecipe>() { }
 	);
 
+	//:::registration
+
+	// TODO - recipe book support, requires enum extensions + screen changes
 	public static final RecipeBookCategory UPGRADING_RECIPE_BOOK_CATEGORY = Registry.register(
 					BuiltInRegistries.RECIPE_BOOK_CATEGORY,
 					Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "upgrading"),
 					new RecipeBookCategory()
 	);
-	//:::registration
+
 	//:::menuRegistration
 	public static final MenuType<UpgradingMenu> UPGRADING_MENU_TYPE = Registry.register(
 					BuiltInRegistries.MENU,

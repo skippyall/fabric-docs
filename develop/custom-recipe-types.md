@@ -48,7 +48,7 @@ Let's use these codecs to implement the methods from `RecipeSerializer`.
 
 @[code transcludeWith=:::implementing](@/reference/latest/src/main/java/com/example/docs/recipe/UpgradingRecipeSerializer.java)
 
-Now we'll register the recipe serializer as well as a recipe type and a recipe book entry. You can do this in your mod's initializer or in a separate class with a method invoked by your mod's initializer.
+Now we'll register the recipe serializer as well as a recipe type. You can do this in your mod's initializer or in a separate class with a method invoked by your mod's initializer.
 
 @[code transcludeWith=:::registration](@/reference/latest/src/main/java/com/example/docs/recipe/ExampleModRecipes.java)
 
@@ -56,7 +56,7 @@ Back to our recipe class, we can now add the methods that return the objects we 
 
 @[code transcludeWith=:::implementRegistryObjects](@/reference/latest/src/main/java/com/example/docs/recipe/UpgradingRecipe.java)
 
-To complete our custom recipe type, we just need to implement the remaining `placementInfo` method, which is used by the recipe book to place our recipe in a screen. For now, we'll just return `PlacementInfo.NOT_PLACEABLE`. We'll also override `isSpecial` to return true to prevent some other recipe book related logic.
+To complete our custom recipe type, we just need to implement the remaining `placementInfo` and `recipeBookCategory` methods, which are used by the recipe book to place our recipe in a screen. For now, we'll just return `PlacementInfo.NOT_PLACEABLE` and `null`, as the recipe book cannot be easily expanded to modded workstations. We'll also override `isSpecial` to return true to prevent some other recipe book related logic from running and logging errors.
 
 @[code transcludeWith=:::recipeBook](@/reference/latest/src/main/java/com/example/docs/recipe/UpgradingRecipe.java)
 
